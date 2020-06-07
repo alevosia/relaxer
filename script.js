@@ -6,6 +6,7 @@ const container = document.querySelector('.container')
 const circle = document.querySelector('.circle')
 const text = document.getElementById('text')
 const pointerContainer = document.querySelector('.pointer-container')
+const audio = document.querySelector('audio')
 
 function breatheAnimation() {
     text.innerHTML = 'Breathe In..'
@@ -25,7 +26,7 @@ function breatheAnimation() {
 function start() {
     text.removeEventListener('click', start)
     circle.removeEventListener('click', start)
-
+    audio.play()
     breatheAnimation()
     setInterval(breatheAnimation, TOTAL_TIME)
 }
