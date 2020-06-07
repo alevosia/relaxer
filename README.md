@@ -3,6 +3,6 @@
 </p>
 
 <p align="center">
-    simple and relaxing
+    <a href="https://alevosia.github.io/relaxer/">Relax</a>
 </p>
 
