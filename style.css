@@ -31,6 +31,10 @@ body {
 	animation: grow 3s linear forwards;
 }
 
+.container.hold {
+	transform: scale(1.2);
+}
+
 .container.shrink {
 	animation: shrink 3s linear forwards;
 }
@@ -49,6 +53,14 @@ body {
 
 #text {
 	cursor: pointer;
+}
+
+.container.grow #text {
+	animation: fade-in-out 3s ease-in-out infinite;
+}
+
+.container.shrink #text {
+	animation: fade-in-out 3s ease-in-out infinite;
 }
 
 .gradient-circle {
@@ -99,6 +111,20 @@ body {
 	text-decoration: none;
 }
 
+@keyframes fade-in-out {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
 @keyframes rotate {
 	from {
 		transform: rotate(0deg);
@@ -126,5 +152,26 @@ body {
 
 	to {
 		transform: scale(1);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		height: 250px;
+		width: 250px;
+	}
+
+	.gradient-circle {
+		height: 270px;
+		width: 270px;
+	}
+
+	.pointer-container {
+		position: absolute;
+		top: -35px;
+		left: 115px;
+		width: 20px;
+		height: 160px;
+		transform-origin: bottom center;
 	}
 }
