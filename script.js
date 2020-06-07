@@ -23,10 +23,12 @@ function breatheAnimation() {
 }
 
 function start() {
+    text.removeEventListener('click', start)
+    circle.removeEventListener('click', start)
+
     breatheAnimation()
     setInterval(breatheAnimation, TOTAL_TIME)
 }
 
-circle.addEventListener('click', function() {
-    start()
-})
+text.addEventListener('click', start)
+circle.addEventListener('click', start)
